@@ -17,11 +17,21 @@ MonoBehaviour:
     answers:
     - answer: yui
       correct: 0
+      scoreCorrect: 10
+      scoreUncorrect: -10
     - answer: yui
       correct: 1
+      scoreCorrect: 10
+      scoreUncorrect: -10
     - answer: "\u043A\u043E\u043D\u0435\u0447\u043D\u043E"
       correct: 0
+      scoreCorrect: 10
+      scoreUncorrect: -10
     - answer: "\u043A\u043E\u043D\u0435\u0447\u043D\u043E"
       correct: 0
+      scoreCorrect: 10
+      scoreUncorrect: -10
     - answer: uyiu
       correct: 1
+      scoreCorrect: 10
+      scoreUncorrect: -10
