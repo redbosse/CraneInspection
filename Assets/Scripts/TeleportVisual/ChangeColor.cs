@@ -4,20 +4,13 @@ namespace TeleportVisual
 {
     public class ChangeColor : MonoBehaviour
     {
-        [SerializeField] private Color targetColor;
         [SerializeField] private MeshRenderer renderer;
-
-        private Color bufferizedColor;
-
-        public void Change()
-        {
-            bufferizedColor = renderer.material.color;
-            renderer.material.color = targetColor;
-        }
+        [SerializeField] private string colorName;
         
-        public void ResetColor()
+        public void SetColor(Color color)
         {
-            renderer.material.color = bufferizedColor;
+            var oldColor = renderer.material.GetColor(colorName);
+            renderer.material.SetColor(colorName, color);
         }
     }
 }

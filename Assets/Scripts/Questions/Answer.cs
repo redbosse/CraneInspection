@@ -8,5 +8,8 @@ namespace Questions
     {
         [SerializeField] private string answer;
         [SerializeField] private bool correct;
+        
+        public string AnswerString => answer;
+        public bool Correct => correct;
     }
 }

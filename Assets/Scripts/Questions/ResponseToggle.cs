@@ -8,9 +8,18 @@ namespace Questions
     {
         [SerializeField] private Toggle toggle;
         [SerializeField] private TMP_Text text;
+        
+        private Answer answer;
 
-        public void initialize(bool isSelect, TMP_Text text)
+        public void SetAnswer(Answer initAnswer)
         {
+            answer = initAnswer;
+            text.text = answer.AnswerString;
+        }
+
+        public bool IsAnswerCorrect()
+        {
+            return answer.Correct && toggle.isOn;
         }
     }
 }

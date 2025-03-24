@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1410cbaaadf84a7aaa6459d37ad21b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Renderer: {fileID: 0}
+  m_Renderer: {fileID: 3240408706312405229}
   m_MaterialIndex: 0
 --- !u!114 &9114413409673842510
 MonoBehaviour:
@@ -142,9 +142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AffordanceStateProvider: {fileID: 6152003236661606513}
-  m_ReplaceIdleStateValueWithInitialValue: 0
+  m_ReplaceIdleStateValueWithInitialValue: 1
   m_AffordanceThemeDatum:
-    m_UseConstant: 0
+    m_UseConstant: 1
     m_ConstantValue:
       m_StateAnimationCurve:
         m_UseConstant: 1
@@ -181,25 +181,25 @@ MonoBehaviour:
         animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
         animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
       - stateName: hovered
-        animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
-        animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
+        animationStateStartValue: {r: 1, g: 0.70148605, b: 0, a: 1}
+        animationStateEndValue: {r: 0, g: 0, b: 0, a: 1}
       - stateName: hoveredPriority
         animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
         animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
       - stateName: selected
-        animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
-        animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
+        animationStateStartValue: {r: 1, g: 0, b: 0, a: 1}
+        animationStateEndValue: {r: 1, g: 0.27387366, b: 0, a: 1}
       - stateName: activated
         animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
         animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
       m_ColorBlendMode: 0
       m_BlendAmount: 1
-    m_Variable: {fileID: 11400000, guid: 0b1260e07d3cf9b4eb80ff2e299d0bbf, type: 2}
+    m_Variable: {fileID: 11400000, guid: 19736c60053a93c46bcc35c29cbad024, type: 2}
   m_ValueUpdated:
     m_PersistentCalls:
       m_Calls: []
   m_MaterialPropertyBlockHelper: {fileID: 371799045347863612}
-  m_ColorPropertyName: 
+  m_ColorPropertyName: _Color
 --- !u!1 &2119641467345865239
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +286,6 @@ GameObject:
   - component: {fileID: 7435706307603005582}
   - component: {fileID: 2829444172209154940}
   - component: {fileID: 3240408706312405229}
-  - component: {fileID: 5527203309295441985}
   m_Layer: 0
   m_Name: FadeWall
   m_TagString: Untagged
@@ -359,29 +358,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5527203309295441985
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4854701974572169176}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &6007524691644127106
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +610,8 @@ GameObject:
   - component: {fileID: 1522954046295521446}
   - component: {fileID: 1247404279534346279}
   - component: {fileID: 5594650056134907023}
-  - component: {fileID: 907578836537469187}
+  - component: {fileID: 5294014918951778375}
+  - component: {fileID: 1067345240088610564}
   m_Layer: 0
   m_Name: Teleport Anchor (2)
   m_TagString: Anchor
@@ -799,34 +776,10 @@ MonoBehaviour:
       m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 907578836537469187}
-        m_TargetAssemblyTypeName: TeleportVisual.ChangeColor, Assembly-CSharp
-        m_MethodName: Change
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_LastSelectExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 907578836537469187}
-        m_TargetAssemblyTypeName: TeleportVisual.ChangeColor, Assembly-CSharp
-        m_MethodName: ResetColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -862,34 +815,58 @@ MonoBehaviour:
   m_UpNormalToleranceDegrees: 30
   m_Teleporting:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Unity.VRTemplate.AnchorVisuals, Assembly-CSharp
-        m_MethodName: HideArrowOnTeleport
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_TeleportAnchorTransform: {fileID: 1522954046295521446}
---- !u!114 &907578836537469187
-MonoBehaviour:
+--- !u!54 &5294014918951778375
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6382292098102442418}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &1067345240088610564
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6382292098102442418}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f366a5d81c4ed14b8ff6981bc9ea776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: 0.6803985, b: 0, a: 1}
-  renderer: {fileID: 3240408706312405229}
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.18, z: 0}
 --- !u!1 &7065060162767608975
 GameObject:
   m_ObjectHideFlags: 0
