@@ -6,5 +6,7 @@ namespace Questions
     public class ScriptableQuestion : ScriptableObject
     {
         [SerializeField] private Quest quest;
+
+        public Quest GetQuest => quest;
     }
 }

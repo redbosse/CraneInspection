@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c9e4b77d98a422b9d519b3cf4877105, type: 3}
-  m_Name: Question
+  m_Name: Question3
   m_EditorClassIdentifier: 
   quest:
-    question: zaza
+    question: ggggg
     answers:
-    - answer: "\u0434\u0430"
+    - answer: yui
       correct: 0
-    - answer: "\u043D\u0435\u0442"
+    - answer: yui
       correct: 1
     - answer: "\u043A\u043E\u043D\u0435\u0447\u043D\u043E"
       correct: 0
     - answer: "\u043A\u043E\u043D\u0435\u0447\u043D\u043E"
       correct: 0
-    - answer: "\u043A\u043E\u043D\u0435\u0447\u043D\u043E"
-      correct: 0
+    - answer: uyiu
+      correct: 1
