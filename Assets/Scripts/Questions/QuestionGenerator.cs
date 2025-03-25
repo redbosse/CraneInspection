@@ -9,16 +9,19 @@ namespace Questions
 {
     public class QuestionGenerator : MonoBehaviour
     {
-        [SerializeField] private UnityEvent OnEndQuestions;
-        [SerializeField] private UnityEvent<int> OnQuestResponce;
+        [SerializeField] private UnityEvent<string> OnEndQuestions;
+        [SerializeField] private UnityEvent<string> OnQuestResponse;
         
         [SerializeField] private ScriptableQuestionQueue questions;
         [SerializeField] private GameObject questionPrefab;
         [SerializeField] private TMP_Text headerText;
 
         private List<GameObject> questionsPool = new();
+        
         private ScriptableQuestion currentQuestion;
+        
         private int currentQuestionIndex = 0;
+        private int finalScore = 0;
         
         public void Generate(ScriptableQuestion question)
         {
@@ -33,13 +36,23 @@ namespace Questions
             }
         }
 
+        public void Reply()
+        {
+            int correctCount = GetRightAnswersCount();
+            OnQuestResponse?.Invoke(correctCount.ToString());
+            
+            LigthUpTheRigthQuestions();
+            
+            finalScore += correctCount;
+        }
+
         public void Next()
         {
             currentQuestionIndex++;
 
             if (OnEndQuest(currentQuestionIndex))
             {
-                OnEndQuestions.Invoke();
+                OnEndQuestions.Invoke(finalScore.ToString());
             }
 
             if (!ValidateIndex(currentQuestionIndex))
@@ -48,10 +61,6 @@ namespace Questions
             }
 
             currentQuestion = questions.Questions[currentQuestionIndex];
-
-            int correctCount = GetRightAnswersCount();
-            Debug.Log(correctCount);
-            OnQuestResponce?.Invoke(correctCount);
             
             ClearPool();
             Generate(currentQuestion);
@@ -80,17 +89,19 @@ namespace Questions
             {
                 var answer = item.GetComponent<ResponseToggle>();
                 
-                if (answer.IsAnswerCorrect())
-                {
-                    rightCount++;
-                }
-                else
-                {
-                    rightCount--;
-                }
+                rightCount += answer.GetScore();
             }
             
             return rightCount;
+        }
+
+        private void LigthUpTheRigthQuestions()
+        {
+            foreach (var item in questionsPool)
+            {
+                var answer = item.GetComponent<ResponseToggle>();
+                answer.LightUp();
+            }
         }
 
         private void ClearPool()
@@ -101,6 +112,8 @@ namespace Questions
             }
             
             questionsPool.Clear();
+
+            finalScore = 0;
         }
     }
 }
