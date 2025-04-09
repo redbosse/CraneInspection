@@ -1,0 +1,29 @@
+name: Unity Build
+
+on:  
+  push:  
+    branches: [ "main" ]  
+  pull_request:  
+    branches: [ "main" ]  
+
+jobs:  
+  build:  
+    name: Build Unity Project  
+    runs-on: ubuntu-latest  
+
+    steps:  
+      - name: Checkout  
+        uses: actions/checkout@v4  
+        with:  
+          lfs: true  # Важно для ассетов  
+
+      - name: Setup Unity  
+        uses: game-ci/unity-setup@v2  
+        with:  
+          unity-version: "2022.3.21f1"  # Укажите свою версию  
+
+      - name: Build  
+        uses: game-ci/unity-builder@v3  
+        with:  
+          targetPlatform: Android  # Или Windows, Android, iOS и т.д.  
+          projectPath: "YourProjectFolder"  # Путь к папке проекта  
